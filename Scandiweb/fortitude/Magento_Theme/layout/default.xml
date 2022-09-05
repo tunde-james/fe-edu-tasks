@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.panel">
+         <container name="header.wrapper" htmlTag="div" before="-">
+          <block name="header.freeshipping" class="Magento\Framework\View\Element\Template" template="Magento_Theme::freeshipping.phtml" ifconfig="carriers/freeshipping/active">
+            <arguments>
+              <argument name="shipping.msg" xsi:type="string">
+                Free shipping for all orders.
+              </argument>
+            </arguments>
+          </block>
+         </container>
+        </referenceContainer>
+        <move element="form.subscribe" destination="content" as="newsletter" after="page-main" before="page-footer"/>
+
+    </body>
+</page>
